@@ -1,0 +1,54 @@
+$primary-color: #f45e1f;
+$secondary-color: #273164;
+
+$body-font-family: 'Avenir Next LT Pro', sans-serif;
+$text-color: #b4b4b4;
+$text-color-dark: #676f92;
+
+$medium: 640px;
+$large: 1024px;
+
+$light-bg: #f6f7fb;
+
+@import "normalize";
+@import "layout";
+@import "elements";
+@import "fonts";
+
+
+body{
+	font: 400 14px/1.5 $body-font-family;
+	color: $text-color;
+}
+
+/* Layout */
+.ba-container{
+	padding-left: 30px;
+	padding-right: 30px;
+	max-width: 1230px;
+	width: 100%;
+}
+p{
+	margin: 0 0 30px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0 0 30px;
+	line-height: 1;
+}
+h1{
+	font-size: 42px;
+	line-height: 1;
+	margin-bottom: 15px;
+
+	@media screen and (min-width:$medium){
+		font-size: 65px;		
+	}
+}
+h2{
+	
+}
+h3{}
+
+@import "header";
+@import "section-intro";
+
