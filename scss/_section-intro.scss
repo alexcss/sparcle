@@ -2,6 +2,7 @@
 	background: #44464d url(../img/intro-bg.jpg) 50% no-repeat;
 	background-size: cover;
 	min-height: 100vh;
+	background-attachment: fixed;
 
 	color: #fff;
 	padding: 120px 0 80px;
@@ -56,6 +57,7 @@
 	max-width: 620px;
 
 	&:hover{
+		color: #fff;
 		&:after{
 			transform: rotate(90deg);
 		}

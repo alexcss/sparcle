@@ -1,0 +1,82 @@
+.ba-scroll{
+	display: block;
+	background-color: $light-bg;
+	transform: translateY( calc(-100% + 1px) );
+	min-height: 48px;
+	line-height: 48px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: #b4b4b4;
+	font-size: 12px;
+	letter-spacing: 0.6px;
+	
+	@media screen and (min-width:$large){
+		margin-bottom: 63px;		
+	}	
+	&:hover{
+		color: $primary-color;
+	}
+}
+.ba-services-list{
+	@media screen and (min-width:$medium){
+		display: flex;
+		justify-content: center;
+	}
+}
+.ba-service{
+	display: block;
+	color: $text-color;
+	/* Style for "bg" */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.02);
+	border-radius: 10px;
+	background-color: #ffffff;
+	padding: 38px;
+	margin-bottom: 30px;
+
+	@media screen and (min-width:$medium){
+		&{
+			max-width: 330px;
+			margin-bottom: 0;			
+		}
+		& + &{
+			margin-left: 30px;
+		}
+	}
+	@media screen and (min-width:$large){
+		& + &{
+			margin-left: 70px;
+		}
+	}
+	svg{
+		margin-bottom: 20px;
+		fill: $primary-color;
+	}
+	p{
+		margin-bottom: 35px;
+	}
+
+	&__title{
+		color: $secondary-color;
+		margin-bottom: 20px;
+	}
+	&__link-text{
+		color: $primary-color;
+		text-decoration: underline;
+		font-size: 13px;
+		letter-spacing: -0.26px;
+
+	}
+
+	&:hover{
+		background-color: $secondary-color;
+		color: #fff;
+
+		svg{
+			fill: currentColor;
+		}
+		.ba-service__title{
+			color: inherit;
+		}
+	}
+}
