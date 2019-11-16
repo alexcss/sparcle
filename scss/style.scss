@@ -29,6 +29,13 @@ body{
 	max-width: 1230px;
 	width: 100%;
 }
+.ba-container-small{
+	padding-left: 30px;
+	padding-right: 30px;
+	max-width: 1030px;
+	width: 100%;
+	margin: 0 auto;
+}
 a{
 	color: $primary-color;
 	text-decoration: none;
@@ -44,6 +51,8 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0 0 30px;
 	line-height: 1;
 	font-weight: 500;
+
+	color: $secondary-color;
 }
 h1{
 	font-size: 42px;
@@ -83,6 +92,21 @@ h3{
 
 	&--services{
 		padding-top: 0;
+	}
+	&--clean{
+		padding-top: 0;
+
+		@media screen and (min-width:$medium){
+			background-image: url(../img/clean-bg.png);
+			background-repeat: no-repeat;
+			background-position: 500px 50%;				
+		}
+		@media screen and (min-width:$large){
+			background-position: 600px 50%;			
+		}
+		@media screen and (min-width:1230px){
+			background-position: right center;			
+		}
 	}
 }
 

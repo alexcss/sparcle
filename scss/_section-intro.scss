@@ -13,6 +13,9 @@
 		padding: 200px 0 120px;		
 	}
 
+	&__title{
+		color: inherit;
+	}
 	&__inner{
 		@media screen and (min-width:$large){
 			max-width: 770px;
