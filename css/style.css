@@ -752,11 +752,87 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 input[type="tel"],
+input[type="url"],
 textarea,
 select {
-  -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
-  -o-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
-  transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+  -webkit-transition: color .3s ease-in,  border-color .3s ease-in,  background-color .3s ease-in,  opacity .3s ease-in, -webkit-box-shadow .2s ease-in;
+  transition: color .3s ease-in,  border-color .3s ease-in,  background-color .3s ease-in,  opacity .3s ease-in, -webkit-box-shadow .2s ease-in;
+  -o-transition: color .3s ease-in,  border-color .3s ease-in,  background-color .3s ease-in,  opacity .3s ease-in, box-shadow .2s ease-in;
+  transition: color .3s ease-in,  border-color .3s ease-in,  background-color .3s ease-in,  opacity .3s ease-in, box-shadow .2s ease-in;
+  transition: color .3s ease-in,  border-color .3s ease-in,  background-color .3s ease-in,  opacity .3s ease-in, box-shadow .2s ease-in,  -webkit-box-shadow .2s ease-in;
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+  padding: 9px 0;
+  margin-bottom: 25px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.ba-float-label {
+  position: relative;
+}
+
+.ba-float-label__input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.ba-float-label__input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.ba-float-label__input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.ba-float-label__input::placeholder {
+  color: transparent;
+}
+
+.ba-float-label__placeholder {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  position: absolute;
+  text-transform: uppercase;
+  left: 0;
+  bottom: 9px;
+  -webkit-transition: color 0.2s, -webkit-transform 0.2s;
+  transition: color 0.2s, -webkit-transform 0.2s;
+  -o-transition: transform 0.2s, color 0.2s;
+  transition: transform 0.2s, color 0.2s;
+  transition: transform 0.2s, color 0.2s, -webkit-transform 0.2s;
+}
+
+.ba-float-label__input:focus ~ .ba-float-label__placeholder,
+.ba-float-label__input:not(:placeholder-shown) ~ .ba-float-label__placeholder {
+  -webkit-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px);
+  color: #f45e1f;
+}
+
+.ba-float-label__input:not(:placeholder-shown):valid {
+  border-color: #2ed573;
+}
+
+.ba-float-label__input:not(:placeholder-shown):invalid {
+  border-color: #ff4757;
 }
 
 @font-face {
@@ -1338,6 +1414,144 @@ h3 {
 
 .ba-list-check li + li {
   margin-top: 10px;
+}
+
+.ba-text-highlight {
+  color: #f45e1f;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.ba-booking-box {
+  background: #273164;
+  color: #fff;
+  padding: 20px 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .ba-booking-box {
+    padding: 50px 80px;
+  }
+}
+
+.ba-booking-box__total {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.ba-booking-box__price {
+  display: block;
+}
+
+@media screen and (min-width: 640px) {
+  .ba-booking-box__price {
+    margin-left: 20px;
+    display: inline;
+  }
+}
+
+.ba-booking-box__inputs {
+  padding: 15px 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .ba-booking-box__inputs {
+    padding: 50px 0 35px;
+  }
+}
+
+.ba-booking-box__button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #f45e1f;
+  font-weight: 500;
+  font-size: 16px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: initial;
+  line-height: 1;
+}
+
+@media screen and (min-width: 640px) {
+  .ba-booking-box__button {
+    font-size: 20px;
+  }
+}
+
+.ba-booking-box__button svg {
+  margin-left: 26px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.ba-booking-box__button:hover {
+  border: none;
+  background: none;
+  color: #f45e1f;
+}
+
+.ba-booking-box__button:hover svg {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.ba-booking-box p {
+  font: 12px;
+  margin-bottom: 5px;
+}
+
+.ba-text-primary {
+  color: #f45e1f;
+  font-weight: 600;
+}
+
+.ba-radio-buttons {
+  padding: 20px 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ba-radio-buttons [type="radio"] {
+  display: none;
+}
+
+.ba-radio-buttons label ~ label {
+  margin-left: 25px;
+}
+
+.ba-radio-buttons label {
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+  -o-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+  transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1023px) {
+  .ba-radio-buttons label {
+    min-width: initial;
+  }
+}
+
+.ba-radio-buttons :checked + label {
+  color: #f45e1f;
+  border-color: #f45e1f;
+  background-color: #fff9f6;
 }
 
 /*# sourceMappingURL=style.css.map */
